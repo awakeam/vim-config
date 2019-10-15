@@ -16,13 +16,20 @@ install() {
   cp ./.vimrc ~/.vimrc
 
   if [ ! -d "~/.vim" ]; then
+    echo "REMOVE ~/.vim"
     rm -rf ~/.vim
-    mkdir ~/.vim
-    mkdir ~/.vim/bundle
-    mkdir ~/.vim/.backup
-    mkdir ~/.vim/.swp
-    mkdir ~/.vim/.undo
   fi
+
+  echo "CREATE ~/.vim"
+  mkdir ~/.vim
+  echo "CREATE ~/.vim/bundle"
+  mkdir ~/.vim/bundle
+  echo "CREATE ~/.vim/.backup"
+  mkdir ~/.vim/.backup
+  echo "CREATE ~/.vim/.swp"
+  mkdir ~/.vim/.swp
+  echo "CREATE ~/.vim/.undo"
+  mkdir ~/.vim/.undo
 
   git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
