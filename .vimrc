@@ -79,17 +79,36 @@ nnoremap <c-l> <c-w>l
 let mapleader="\\"
 
 " .vimrc
-nnoremap <Leader>ve :vs ~/.vimrc<CR>
-nnoremap <Leader>vs :so ~/.vimrc<CR>
-nnoremap <Leader>vd :set background=dark<CR>
-nnoremap <Leader>vl :set background=light<CR>
+nnoremap <silent> <Leader>ve :tabnew ~/.vimrc<CR>
+nnoremap <silent> <Leader>vv :source ~/.vimrc<CR>
+nnoremap <silent> <Leader>vh :setlocal hlsearch!<CR>
+nnoremap <silent> <Leader>vn :setlocal number!<CR>
+nnoremap <silent> <Leader>vt :call BackgroundToggle()<CR>
+
+" format
+nnoremap <silent> <Leader>= :normal! gg=G<CR>
+
+" swith buffer
+nnoremap <silent> gB :bprevious<CR>
+nnoremap <silent> gb :bnext<CR>
+nnoremap <silent> <Leader>bl :ls<CR>
+nnoremap <silent> <Leader>bo :enew<CR>
+nnoremap <silent> <Leader>bd :bdelete<CR>
 
 
 " ------------------------------
 " NERDTree
 " ------------------------------
 let NERDTreeWinPos="left"
-nnoremap <F2> :NERDTreeToggle<CR>
+nnoremap <silent> <F2> :NERDTreeToggle<CR>
+
+" ------------------------------
+" Tagbar
+" ------------------------------
+let g:tagbar_ctags_bin='/usr/bin/ctags'
+let g:tagbar_width=30
+let g:tagbar_right=1
+nnoremap <silent> <F3> :TagbarToggle<CR>
 
 
 " ------------------------------
@@ -110,7 +129,22 @@ let g:airline_theme="gruvbox"
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:airline#extensions#tabline#buffer_nr_show = 0
-" 映射切换buffer的键位
-nnoremap [b :bp<CR>
-nnoremap ]b :bn<CR>
+let g:airline#extensions#tabline#buffer_nr_show = 1
+
+
+
+
+
+" ------------------------------
+" Tool Function
+" ------------------------------
+
+" change background is dark or light
+function BackgroundToggle()
+  if (&background ==? "dark")
+    let &background = "light"
+  else
+    let &background = "dark"
+  endif
+endfunction
+
