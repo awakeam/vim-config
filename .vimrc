@@ -9,21 +9,30 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'jiangmiao/auto-pairs'
-Plugin 'mattn/emmet-vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'leafgarland/typescript-vim'
+Plugin 'majutsushi/tagbar'
+Plugin 'dense-analysis/ale'
 Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-surround'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'kien/ctrlp.vim'
 Plugin 'morhetz/gruvbox'
-Plugin 'majutsushi/tagbar'
 Plugin 'vim-airline/vim-airline'
+Plugin 'mattn/emmet-vim'
 Plugin 'pangloss/vim-javascript'
-Plugin 'tpope/vim-surround'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'Quramy/vim-js-pretty-template'
+Plugin 'jason0x43/vim-js-indent'
+Plugin 'Quramy/vim-dtsm'
+Plugin 'mhartington/vim-typings'
+Plugin 'Shougo/vimproc.vim'
+Plugin 'Quramy/tsuquyomi'
+Plugin 'tpope/vim-fugitive.git'
 
 call vundle#end()
 filetype plugin indent on
 
+" PS: vimproc need to run make command
 
 " ------------------------------
 " Base
@@ -74,6 +83,12 @@ nnoremap <c-l> <c-w>l
 
 
 " ------------------------------
+" Autocmd
+" ------------------------------
+autocmd FileType typescript setlocal formatprg=prettier\ --parser\ typescript
+
+
+" ------------------------------
 " Leader
 " ------------------------------
 let mapleader="\\"
@@ -86,7 +101,7 @@ nnoremap <silent> <Leader>vn :setlocal number!<CR>
 nnoremap <silent> <Leader>vt :call BackgroundToggle()<CR>
 
 " format
-nnoremap <silent> <Leader>= :normal! gg=G<CR>
+nnoremap <silent> <Leader>= :normal! gggqG<CR>
 
 " swith buffer
 nnoremap <silent> gB :bprevious<CR>
@@ -130,6 +145,45 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#buffer_nr_show = 1
+
+
+" ------------------------------
+" ale
+" ------------------------------
+let g:ale_linters = {
+\   'c++': ['clang'],
+\   'c': ['clang'],
+\   'python': ['pylint'],
+\   'javascript': ['eslint'],
+\   'typescript': ['prettier'],
+\}
+let g:ale_fixers = {
+\    'javascript': ['eslint'],
+\    'typescript': ['prettier'],
+\    'scss': ['prettier'],
+\    'html': ['prettier'],
+\}
+let g:ale_fix_on_save = 1
+let g:ale_java_javac_options = '-encoding UTF-8  -J-Duser.language=en'
+
+
+"  'typescript': ['tsserver', 'tslint'],
+
+
+" ------------------------------
+" TsuImport
+" ------------------------------
+
+
+" ------------------------------
+" TsuImport
+" ------------------------------
+let &t_ti.="\e[1 q"
+let &t_SI.="\e[5 q"
+let &t_EI.="\e[1 q"
+let &t_te.="\e[0 q"
+
+
 
 
 
