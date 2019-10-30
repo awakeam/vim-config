@@ -8,6 +8,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'morhetz/gruvbox'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
@@ -15,19 +16,11 @@ Plugin 'dense-analysis/ale'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-surround'
 Plugin 'terryma/vim-multiple-cursors'
-Plugin 'kien/ctrlp.vim'
-Plugin 'morhetz/gruvbox'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'mattn/emmet-vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'leafgarland/typescript-vim'
-Plugin 'Quramy/vim-js-pretty-template'
-Plugin 'jason0x43/vim-js-indent'
-Plugin 'Quramy/vim-dtsm'
-Plugin 'mhartington/vim-typings'
-Plugin 'Shougo/vimproc.vim'
-Plugin 'Quramy/tsuquyomi'
-Plugin 'tpope/vim-fugitive.git'
 
 call vundle#end()
 filetype plugin indent on
@@ -39,6 +32,7 @@ filetype plugin indent on
 " ------------------------------
 set wrap
 set number
+set hlsearch
 set cursorline
 
 set encoding=utf-8
