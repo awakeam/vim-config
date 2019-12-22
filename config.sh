@@ -50,3 +50,9 @@ elif [ $1 = "update" ];then
   update
 fi
 
+
+# YouCompleteMe
+# -------------
+# cd ~/.vim/bundle/YouCompleteMe
+# git submodule update --init --recursive
+# ./install.py --clang-completer

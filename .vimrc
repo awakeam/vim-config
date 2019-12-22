@@ -9,18 +9,20 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'morhetz/gruvbox'
-Plugin 'jiangmiao/auto-pairs'
+Plugin 'vim-airline/vim-airline'
 Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
+Plugin 'Chiel92/vim-autoformat'
 Plugin 'dense-analysis/ale'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-surround'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'vim-airline/vim-airline'
 Plugin 'mattn/emmet-vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'leafgarland/typescript-vim'
+Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()
 filetype plugin indent on
@@ -83,6 +85,16 @@ autocmd FileType typescript setlocal formatprg=prettier\ --parser\ typescript
 
 
 " ------------------------------
+" Autoformat
+" ------------------------------
+noremap <F4> :Autoformat<CR>
+let g:autoformat_verbosemode=1
+let g:formatdef_my_cpp = '"astyle --style=google"'
+let g:formatters_cpp = ['my_cpp']
+" au BufWrite * :Autoformat
+
+
+" ------------------------------
 " Leader
 " ------------------------------
 let mapleader="\\"
@@ -142,31 +154,33 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 
 
 " ------------------------------
+" YouCompleteMe
+" ------------------------------
+let g:ycm_global_ycm_extra_conf='~/.vim/bundle/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
+
+
+" ------------------------------
 " ale
 " ------------------------------
 let g:ale_linters = {
-\   'c++': ['clang'],
-\   'c': ['clang'],
-\   'python': ['pylint'],
-\   'javascript': ['eslint'],
-\   'typescript': ['prettier'],
-\}
+      \   'c++': ['clang'],
+      \   'c': ['clang'],
+      \   'python': ['pylint'],
+      \   'javascript': ['eslint'],
+      \   'typescript': ['prettier'],
+      \}
 let g:ale_fixers = {
-\    'javascript': ['eslint'],
-\    'typescript': ['prettier'],
-\    'scss': ['prettier'],
-\    'html': ['prettier'],
-\}
+      \    'javascript': ['eslint'],
+      \    'typescript': ['prettier'],
+      \    'scss': ['prettier'],
+      \    'html': ['prettier'],
+      \}
 let g:ale_fix_on_save = 1
 let g:ale_java_javac_options = '-encoding UTF-8  -J-Duser.language=en'
 
 
 "  'typescript': ['tsserver', 'tslint'],
 
-
-" ------------------------------
-" TsuImport
-" ------------------------------
 
 
 " ------------------------------
