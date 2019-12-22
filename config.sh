@@ -56,3 +56,11 @@ fi
 # cd ~/.vim/bundle/YouCompleteMe
 # git submodule update --init --recursive
 # ./install.py --clang-completer
+
+# astyle
+# ------
+# wget https://nchc.dl.sourceforge.net/project/astyle/astyle/astyle%203.1/astyle_3.1_linux.tar.gz
+# tar zxvf astyle_3.1_linux.tar.gz
+# cd astyle/build
+# cmake ..
+# make && make install
