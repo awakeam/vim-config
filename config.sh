@@ -13,25 +13,25 @@ fi
 # 从git仓库到home目录
 install() {
   echo "installing..."
-  cp ./.vimrc ~/.vimrc
+  cp ./init.vim ~/.config/nvim/init.vim
 
-  if [ ! -d "~/.vim" ]; then
-    echo "REMOVE ~/.vim"
-    rm -rf ~/.vim
-  fi
+  # if [ ! -d "~/.vim" ]; then
+  #   echo "REMOVE ~/.vim"
+  #   rm -rf ~/.vim
+  # fi
 
-  echo "CREATE ~/.vim"
-  mkdir ~/.vim
-  echo "CREATE ~/.vim/bundle"
-  mkdir ~/.vim/bundle
-  echo "CREATE ~/.vim/.backup"
-  mkdir ~/.vim/.backup
-  echo "CREATE ~/.vim/.swp"
-  mkdir ~/.vim/.swp
-  echo "CREATE ~/.vim/.undo"
-  mkdir ~/.vim/.undo
+  # echo "CREATE ~/.vim"
+  # mkdir ~/.vim
+  # echo "CREATE ~/.vim/bundle"
+  # mkdir ~/.vim/bundle
+  # echo "CREATE ~/.vim/.backup"
+  # mkdir ~/.vim/.backup
+  # echo "CREATE ~/.vim/.swp"
+  # mkdir ~/.vim/.swp
+  # echo "CREATE ~/.vim/.undo"
+  # mkdir ~/.vim/.undo
 
-  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+  # git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
   echo "Done!"
 }
@@ -39,7 +39,9 @@ install() {
 # 从home目录到git仓库
 update() {
   echo "updating..."
-  cp ~/.vimrc .
+  # cp ~/.vimrc .
+  cp ~/.config/nvim/init.vim ./init.vim
+  cp ~/.config/i3/config ./config-for-i3wm
   echo "Done!";
 }
 
