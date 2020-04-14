@@ -93,7 +93,8 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # lock
-bindsym $mod+shift+z exec xtrlock -b
+# bindsym $mod+shift+z exec xtrlock -b
+bindsym $mod+shift+z exec i3lock -n -c 000000
 
 # shutdown now
 # bindsym $mod+shift+s exec shutdown now
