@@ -27,9 +27,18 @@ font pango:monospace 8
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
+# 黑屏、睡眠、断电
+exec --no-startup-id xset dpms 7200
+
+# wallpaper
+# exec feh --randomize --bg-fill ~/Pictures/Wallpaper
+
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
+
+# 电源管理
+exec --no-startup mate-power-manager
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -51,19 +60,23 @@ bindsym $mod+Return exec i3-sensible-terminal
 # bindsym $mod+Return exec terminator
 
 # screenshot
-bindsym $mod+s exec scrot -s
+bindsym $mod+p exec flameshot gui
 
 # open file manager
-bindsym $mod+m thunar
+bindsym $mod+m exec thunar
 
 # google-chrome-stable
-bindsym $mod+c exec firefox-esr
+bindsym $mod+f exec firefox-esr
+bindsym $mod+c exec google-chrome
 
 # split in horizontal orientation
 # bindsym $mod+semicolon split h
 
+# split in horizontal orientation
+bindsym $mod+Shift+s split h
+
 # split in vertical orientation
-# bindsym $mod+v split v
+bindsym $mod+Shift+v split v
 
 # change container layout (stacked, tabbed, toggle split)
 # bindsym $mod+s layout stacking
@@ -81,6 +94,9 @@ bindsym $mod+a focus parent
 
 # lock
 bindsym $mod+shift+z exec xtrlock -b
+
+# shutdown now
+# bindsym $mod+shift+s exec shutdown now
 
 # auto screen
 bindsym $mod+shift+p exec mtr
@@ -165,6 +181,10 @@ bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
+
+# # workspace change
+# bindsym $mod+Tab workspace next
+# bindsym $mod+Shift+Tab workspace prev
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1

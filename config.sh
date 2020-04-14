@@ -42,6 +42,9 @@ update() {
   # cp ~/.vimrc .
   cp ~/.config/nvim/init.vim ./init.vim
   cp ~/.config/i3/config ./config-for-i3wm
+  git add .
+  git commit -m 'update'
+  git push
   echo "Done!";
 }
 
