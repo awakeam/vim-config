@@ -21,11 +21,11 @@ Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'mattn/emmet-vim'
 " Plug 'easymotion/vim-easymotion'
 Plug 'sheerun/vim-polyglot'
-Plug 'justinmk/vim-dirvish'
-Plug 'tpope/vim-fugitive'
+" Plug 'justinmk/vim-dirvish'
+" Plug 'tpope/vim-fugitive'
 Plug 'sbdchd/neoformat'
 
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'dense-analysis/ale'
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 
@@ -169,19 +169,19 @@ nnoremap <silent> <leader>= :Neoformat<CR>
 " Coc.nvim
 " ------------------------------
 
-autocmd CursorHold * silent call CocActionAsync('highlight')
-command! -nargs=0 Format :call CocAction('format')
+" autocmd CursorHold * silent call CocActionAsync('highlight')
+" command! -nargs=0 Format :call CocAction('format')
 
-nnoremap <silent> <F6> :CocAction('runCommand', 'tsserver.organizeImports')<CR>
-nnoremap <silent> <F7> :CocAction('quickfixes')<CR>
-nnoremap <silent> <F8> :Format<CR>
+" nnoremap <silent> <F6> :CocAction('runCommand', 'tsserver.organizeImports')<CR>
+" nnoremap <silent> <F7> :CocAction('quickfixes')<CR>
+" nnoremap <silent> <F8> :Format<CR>
 
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-nmap <silent> g[ <Plug>(coc-diagnostic-prev)
-nmap <silent> g] <Plug>(coc-diagnostic-next)
+" nmap <silent> gd <Plug>(coc-definition)
+" nmap <silent> gy <Plug>(coc-type-definition)
+" nmap <silent> gi <Plug>(coc-implementation)
+" nmap <silent> gr <Plug>(coc-references)
+" nmap <silent> g[ <Plug>(coc-diagnostic-prev)
+" nmap <silent> g] <Plug>(coc-diagnostic-next)
 
 " ------------------------------
 " ALE
