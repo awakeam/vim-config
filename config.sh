@@ -40,8 +40,10 @@ install() {
 update() {
   echo "updating..."
   # cp ~/.vimrc .
-  cp ~/.config/nvim/init.vim ./init.vim
-  cp ~/.config/i3/config ./config-for-i3wm
+  cp ~/.config/i3/config ./i3.config
+  cp ~/.config/i3status/config ./i3status.config
+  cp ~/.config/terminator/config ./terminator.config
+  cp ~/.config/nvim/init.vim ./nvim.config
   git add .
   git commit -m 'update'
   git push
