@@ -39,11 +39,11 @@ install() {
 # 从home目录到git仓库
 update() {
   echo "updating..."
-  # cp ~/.vimrc .
   cp ~/.config/i3/config ./i3.config
   cp ~/.config/i3status/config ./i3status.config
   cp ~/.config/terminator/config ./terminator.config
   cp ~/.config/nvim/init.vim ./nvim.config
+  cp ~/.config/ranger/rc.conf ./ranger.config
   git add .
   git commit -m 'update'
   git push
@@ -57,6 +57,8 @@ elif [ $1 = "update" ];then
   update
 fi
 
+# ranger config
+# $ ranger --copy-config=all
 
 # YouCompleteMe
 # -------------
