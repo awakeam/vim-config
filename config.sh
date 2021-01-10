@@ -44,6 +44,7 @@ update() {
   cp ~/.config/terminator/config ./terminator.config
   cp ~/.config/nvim/init.vim ./nvim.config
   cp ~/.config/ranger/rc.conf ./ranger.config
+  git status
   git add .
   git commit -m 'update'
   git push
