@@ -19,7 +19,7 @@
 # apt install
 #================
 
-# sudo apt install i3 rofi feh flameshot fcitx fonts-firacode zathura terminator fzf mindmaster rg rdesktop irssi
+# sudo apt install i3 rofi feh flameshot fcitx fonts-firacode zathura terminator fzf mindmaster rg rdesktop irssi compton calibre
 
 # oh-my-zsh
 # https://github.com/ohmyzsh/ohmyzsh/blob/master/tools/install.sh
