@@ -43,6 +43,7 @@ update() {
   cp ~/.config/i3status/config ./i3status.config
   cp ~/.config/terminator/config ./terminator.config
   cp ~/.config/nvim/init.vim ./nvim.config
+  cp ~/.config/nvim/coc-settings.json ./coc-settings.json
   cp ~/.config/ranger/rc.conf ./ranger.config
   git status
   git add .
