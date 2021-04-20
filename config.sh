@@ -45,6 +45,7 @@ update() {
   cp ~/.config/nvim/init.vim ./nvim.config
   cp ~/.config/nvim/coc-settings.json ./coc-settings.json
   cp ~/.config/ranger/rc.conf ./ranger.config
+  cp ~/.goldendict/config ./goldendict.config
   git status
   git add .
   git commit -m 'update'
