@@ -1,0 +1,6 @@
+set recolor-darkcolor "#f57900"
+set recolor-lightcolor "#1E1E1E"
+
+map D toggle_page_mode
+map d scroll half-down
+map u scroll half-up

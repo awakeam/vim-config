@@ -46,6 +46,7 @@ update() {
   cp ~/.config/nvim/coc-settings.json ./coc-settings.json
   cp ~/.config/ranger/rc.conf ./ranger.config
   cp ~/.goldendict/config ./goldendict.config
+  cp ~/.config/zathura/zathurarc ./zathurarc
   git status
   git add .
   git commit -m 'update'
