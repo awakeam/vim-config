@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [[ $# -eq 1 ]]
+then
+  asciidoctor-pdf -a scripts=cjk -a pdf-theme=~/soft/bin/cjk-theme.yml -a pdf-fontsdir=GEM_FONTS_DIR,`ruby -r asciidoctor-pdf-cjk-kai_gen_gothic -e "print File.expand_path '../fonts', (Gem.datadir 'asciidoctor-pdf-cjk-kai_gen_gothic')"` $1
+  exit
+else
+  echo "请传入文件名！"
+fi

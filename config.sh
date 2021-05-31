@@ -47,7 +47,8 @@ update() {
   cp ~/.config/ranger/rc.conf ./ranger.config
   cp ~/.goldendict/config ./goldendict.config
   cp ~/.config/zathura/zathurarc ./zathurarc
-  cp ~/Downloads/cjk-theme.yml ./cjk-theme.yml
+  cp ~/soft/bin/cjk-theme.yml ./cjk-theme.yml
+  cp ~/soft/bin/topdf ./topdf
   git status
   git add .
   git commit -m 'update'
