@@ -1,4 +1,4 @@
-set recolor-darkcolor "#f57900"
+set recolor-darkcolor "#e1e1e1"
 set recolor-lightcolor "#1E1E1E"
 
 map D toggle_page_mode

@@ -1,0 +1,30 @@
+extends: default
+font:
+  catalog:
+    merge: true
+    KaiGen Gothic CN:
+      normal: KaiGenGothicCN-Regular.ttf
+      bold: KaiGenGothicCN-Bold.ttf
+      italic: KaiGenGothicCN-Regular-Italic.ttf
+      bold_italic: KaiGenGothicCN-Bold-Italic.ttf
+  fallbacks:
+  - KaiGen Gothic CN
+base:
+  font-family: KaiGen Gothic CN
+heading:
+  font-family: $base-font-family
+abstract:
+  title:
+    font-family: $heading-font-family
+sidebar:
+  title:
+    font-family: $heading-font-family
+
+
+# 安装命令
+# sudo gem install asciidoctor-pdf
+# sudo gem install rouge
+# sudo gem install asciidoctor-pdf-cjk-kai_gen_gothic
+
+# 转换命令，转换DataTransfer.txt
+# asciidoctor-pdf -a scripts=cjk -a pdf-theme=./cjk-theme.yml -a pdf-fontsdir=GEM_FONTS_DIR,`ruby -r asciidoctor-pdf-cjk-kai_gen_gothic -e "print File.expand_path '../fonts', (Gem.datadir 'asciidoctor-pdf-cjk-kai_gen_gothic')"` DataTransfer.txt
